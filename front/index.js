@@ -1,8 +1,9 @@
 /**
 Declare all variables required for the game
  */
-
+const START_BUTTON = document.querySelector('#start-button')
 const TILES = document.querySelectorAll('.tile');
+const SCORE_CONTAINER = document.getElementById("score-container");
 /**
  * Equivalent jQuery
  * const TILES = $('.tile');
@@ -35,14 +36,18 @@ let gameStarted = false;
 let cardsSelected = [];
 let cardsResolved = false;
 
-const imagesPairs = selectAndRandomizeFruits();
-TILES.forEach((tile, index) => {
-    setupTile(tile, index, imagesPairs);
+START_BUTTON.addEventListener('click', () => {
+    START_BUTTON.remove()
+    SCORE_CONTAINER.remove()
+    const imagesPairs = selectAndRandomizeFruits();
+    TILES.forEach((tile, index) => {
+        setupTile(tile, index, imagesPairs);
+    })
+    // Equivalent jQuery
+    // $('.tile').each((index, tile) => {
+    //   setupTile(tile, index, imagesPairs);
+    //   })
+    stopwatch();
 })
-// Equivalent jQuery
-// $('.tile').each((index, tile) => {
-//   setupTile(tile, index, imagesPairs);
-//   })
 
 initializeScore();
-stopwatch()

@@ -9,17 +9,21 @@ use Memory\Model\Score;
  */
 class GetBestScoreResponse
 {
-    public function __construct(?Score $score)
+    public function __construct(array $scores)
     {
         http_response_code(200);
         header('Content-Type: application/json');
-        $response = null;
-        if ($score !== null) {
-            $response = ['score' => [
-                'id' => $score->getId(),
-                'time' => $score->getTime(),
-            ]];
+        $response = [];
+        if (!empty($scores)) {
+            $response = array_map(
+                fn (Score $score) => [
+                    'id' => $score->getId(),
+                    'time' => $score->getTime(),
+                ],
+                $scores
+            );
         }
+
         echo json_encode($response);
     }
 }

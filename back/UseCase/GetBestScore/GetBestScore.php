@@ -30,7 +30,7 @@ class GetBestScore
     public function __invoke(): GetBestScoreResponse|GetBestScoreErrorResponse
     {
         try {
-            $score = $this->repository->findBestScore();
+            $score = $this->repository->findBestScores();
 
             return new GetBestScoreResponse($score);
         } catch (\PDOException $ex) {

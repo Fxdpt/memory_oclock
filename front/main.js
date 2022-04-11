@@ -261,10 +261,8 @@ function stopwatch() {
  * Récupère le meilleur score depuis la base de données et l'affiche.
  */
 function initializeScore() {
-  let score = null;
-  const scoreContainer = document.getElementById("score-container");
   /**
-   * On utilise une fonction asynchrone pour récupérer le meilleur score.
+   * On utilise une fonction asynchrone pour récupérer les meilleurs scores.
    * Dans le cas d'une première utilisation ou si personne n'a réussi a terminer
    * le jeu, on doit se préparer à la récupération de la valeur null,
    * et donc n'afficher aucun meilleur score.
@@ -275,13 +273,19 @@ function initializeScore() {
     .then((res) => {
       return res.json();
     })
-    .then((data) => {
-      if (data !== null && data.hasOwnProperty("score")) {
-        score = data.score;
-        var minutes = Math.floor(score.time / 60000);
-        var seconds = ((score.time % 60000) / 1000).toFixed(0);
-        const bestTime = `${minutes}min  ${seconds < 10 ? "0" : ""}${seconds}s`;
-        scoreContainer.innerHTML = `<span>Meilleur score: ${bestTime}</span>`;
+    .then((scores) => {
+      if (scores !== null) {
+        listContainer = document.createElement("ol");
+        console.log(scores);
+        scores.forEach((score) => {
+          var minutes = Math.floor(score.time / 60000);
+          var seconds = ((score.time % 60000) / 1000).toFixed(0);
+          const bestTime = `${minutes}min  ${seconds < 10 ? "0" : ""}${seconds}s`;
+          const scoreItem = document.createElement("li");
+          scoreItem.innerHTML = bestTime;
+          listContainer.appendChild(scoreItem);
+        })
+        SCORE_CONTAINER.appendChild(listContainer);
       }
     });
 
@@ -297,7 +301,7 @@ function initializeScore() {
   //       var seconds = ((score.time % 60000) / 1000).toFixed(0);
   //       const bestTime =
   //         minutes + "min" + (seconds < 10 ? "0" : "") + seconds + "s";
-  //       scoreContainer.innerHTML =
+  //       SCORE_CONTAINER.innerHTML =
   //         "<span>Meilleur score: " + bestTime + " </span>";
   //     }
   //   }

@@ -1,87 +1,105 @@
-h1
+body
     font-family: Arial, Helvetica, sans-serif
-    display: flex;
-    justify-content: center;
+
+h1
+    display: flex
+    justify-content: center
     background-color: #ccc
+
+button
+    background-color: #f0f
+    display: flex;
+    outline: none;
+    cursor: pointer;
+    font-size: 1em;
+    line-height: 1.5em;
+    font-weight: 600;
+    border-radius: 8px;
+    padding: 1em;
+    border: none;
+    color: #fff;
 
 .container
     display: flex
     flex-direction: column
 
 .row
-    display: flex;
+    display: flex
 
 .tile
-    flex: 1;
-    margin: 10px;
-    background-color: #ccc;
-    border-radius: 5px;
-    height: 12em;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    flex: 1
+    margin: 10px
+    background-color: #ccc
+    border-radius: 5px
+    height: 12em
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3)
 
 #progress-bar
     display: flex
     width: 100%
-    height: 2em;
-    background-color: #ccc;
+    height: 2em
+    background-color: #ccc
 
 .flipped
     background-image: url('./assets/cards.png')
-    background-size: 200px;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-color: #fff;
+    background-size: 200px
+    background-repeat: no-repeat
+    background-position: center
+    background-color: #fff
+
+@function displayFruits($pixelPosition)
+    @return center  + ''$pixelPosition + px
 
 .red_apple
-    background-position: center 0
+    background-position: displayFruits(0);
 
 .banana
-    background-position: center -200px
+    background-position: displayFruits(-200);
 
 .orange
-    background-position: center -400px
+    background-position: displayFruits(-400);
 
 .green_lemon
-    background-position: center -600px
+    background-position: displayFruits(-600);
 
 .berry
-    background-position: center -800px
+    background-position: displayFruits(-800);
 
 .apricot
-    background-position: center -1000px
+    background-position: displayFruits(-1000);
 
 .lemon
-    background-position: center -1200px
+    background-position: displayFruits(-1200);
 
 .strawberry
-    background-position: center -1400px
+    background-position: displayFruits(-1400);
 
 .green_apple
-    background-position: center -1600px
+    background-position: displayFruits(-1600);
 
 .peach
-    background-position: center -1800px
+    background-position: displayFruits(-1800);
 
 .grape
-    background-position: center -2000px
+    background-position: displayFruits(-2000);
 
 .watermelon
-    background-position: center -2200px
+    background-position: displayFruits(-2200);
 
 .plums
-    background-position: center -2400px
+    background-position: displayFruits(-2400);
 
 .pear
-    background-position: center -2600px
+    background-position: displayFruits(-2600);
 
 .cherry
-    background-position: center -2800px
+    background-position: displayFruits(-2800);
 
 .raspberry
-    background-position: center -3000px
+    background-position: displayFruits(-3000);
 
 .mango
-    background-position: center -3200px
+    background-position: displayFruits(-3200);
 
 .yellow_cherry
-    background-position: center -3400px
+    background-position: displayFruits(-3400);
