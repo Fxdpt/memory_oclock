@@ -1,5 +1,5 @@
 /**
-Declare all variables required for the game
+ * Declaration des variables nécessaires au bon fonctionnement du jeu
  */
 const START_BUTTON = document.querySelector('#start-button')
 const TILES = document.querySelectorAll('.tile');
@@ -8,10 +8,7 @@ const SCORE_CONTAINER = document.getElementById("score-container");
  * Equivalent jQuery
  * const TILES = $('.tile');
  */
-
 const PAIR_NUMBER = TILES.length / 2;
-let time = 0;
-let points = 0;
 const IMAGES = [
     'red_apple',
     'banana',
@@ -32,6 +29,8 @@ const IMAGES = [
     'mango',
     'yellow_cherry',
 ];
+let time = 0;
+let points = 0;
 let gameStarted = false;
 let cardsSelected = [];
 let cardsResolved = false;
