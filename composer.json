@@ -1,0 +1,12 @@
+{
+    "name": "fxdpt/memory_game",
+    "description": "technical test for O'Clock",
+    "require": {
+        "symfony/dotenv": "^6.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Memory\\": "back/"
+        }
+    }
+}
