@@ -15,6 +15,11 @@ class GetBestScoreResponse
         header('Content-Type: application/json');
         $response = [];
         if (!empty($scores)) {
+            /**
+             * Pour uniformiser nos différents objets, on utilise la fonction array_map afin de créer un tableau
+             * contenant les propriétés de nos objets. on retourne ensuite notre tableau encodé en JSON pour qu'il soit
+             * exploitable par la partie client de l'application.
+             */
             $response = array_map(
                 fn (Score $score) => [
                     'id' => $score->getId(),
