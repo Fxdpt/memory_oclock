@@ -11,6 +11,8 @@
 
 ### Note
 - l'application a un meilleur fonctionnement si elle est lancée avec LiveServer depuis VSCode. Le comportement restera le même mais selon les navigateurs, des erreurs peuvent s'afficher pour la lecture des musiques (bien que cela n'empeche pas le fonctionnement et la lecture).
+
+    Le fichier HTML est situé dans front/index.html
 - J'ai volontairement commenté du code jQuery, j'ai fais quelques exemples d'implémentation en jQuery pour montrer que je maitrise cette librairie et qu'elle est utilisé pendant la formation.
 
     Cependant je préfère utiliser du Javascript natif que je trouve beaucoup plus lisible, et qui aujourd'hui couvre énormément de fonctionnalités qui rendait jQuery presque indispensable il y a encore quelque temps (requete XHR principalement)
