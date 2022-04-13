@@ -9,6 +9,10 @@ namespace Memory\UseCase\GetBestScore;
  */
 class GetBestScoreErrorResponse
 {
+    /**
+     * @param integer $statusCode
+     * @param string $message
+     */
     public function __construct(private int $statusCode, private string $message)
     {
         http_response_code($statusCode);

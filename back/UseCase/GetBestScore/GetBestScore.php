@@ -27,6 +27,9 @@ class GetBestScore
         $this->repository = new ReadScoreRepository($database);
     }
 
+    /**
+     * @return GetBestScoreResponse|GetBestScoreErrorResponse
+     */
     public function __invoke(): GetBestScoreResponse|GetBestScoreErrorResponse
     {
         try {

@@ -9,6 +9,9 @@ use Memory\Model\Score;
  */
 class GetBestScoreResponse
 {
+    /**
+     * @param array<Score> $scores
+     */
     public function __construct(array $scores)
     {
         http_response_code(200);
